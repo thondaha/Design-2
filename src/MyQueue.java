@@ -1,5 +1,9 @@
 import java.util.Stack;
-
+/*
+I use two stacks: an input stack for push operations and an output stack for pop/peek operations.
+When output is empty, and we need to pop/peek, I move all elements from input to output which reverses the order and simulates FIFO.
+Each element moves from input to output at most once, so operations are amortized O(1).
+*/
 class MyQueue {
     private Stack<Integer> inStack;
     private Stack<Integer> outStack;

@@ -1,3 +1,20 @@
+/*
+I use an array of buckets where each bucket stores a linked list to handle hash collisions using separate chaining.
+The key is mapped to a bucket index using a hash function (key % size), and all operations traverse only that bucket.
+This gives average O(1) time for add, remove, and contains, with O(n) worst case if many keys collide.
+Time Complexity (average):
+  add:      O(1)
+  remove:   O(1)
+  contains: O(1)
+Worst case (many collisions in one bucket):
+  O(n)
+
+Space Complexity:
+  O(n)
+  // Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+*/
+
 class MyHashMap {
     private class Node{
         int key;
