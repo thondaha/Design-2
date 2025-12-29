@@ -71,16 +71,18 @@ class MyHashMap {
     public void remove(int key) {
         int hash = hash(key);
         Node cur = buckets[hash];
-        while (cur == null) return;
+        if (cur == null) return;
+        // remove head
         if(cur.key == key){
             buckets[hash] = cur.next;
             return;
         }
         while(cur.next != null){
-            if(cur.key == key){
+            if(cur.next.key == key){
                 cur.next = cur.next.next;
                 return;
             }
+            cur = cur.next;
         }
     }
 }
